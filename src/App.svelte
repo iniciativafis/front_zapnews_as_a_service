@@ -140,7 +140,7 @@
 
 <main style="padding-top: 80px;">
 
-	<div class="container">
+	<!--<div class="container">-->
 
 		<div class="scrollable-content">
 
@@ -259,7 +259,7 @@
 
 		<div style="padding-bottom: 13%;"></div>
 	
-	</div>
+	<!--</div>-->
 
 </main>
 
