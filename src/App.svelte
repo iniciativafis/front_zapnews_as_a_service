@@ -252,7 +252,7 @@
 		{/if}		
 
 	</div>
-	<div style="padding-bottom: 13%;"></div>
+	<div style="padding-bottom: 15%;"></div>
 
 </main>
 
