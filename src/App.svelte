@@ -145,13 +145,13 @@
 
 	<div>
 		<label for='titulo'> <p1> Título: </p1> </label>
-		<textarea name='titulo' cols="45" rows="4" maxlength="400" style="resize: none;" />	
+		<textarea name='titulo' cols="30" rows="4" maxlength="400" style="resize: none;" />	
 		<br>
 	</div>
 	<br>	
 	<div>
 		<label for='resumo'> <p1> Resumo: </p1> </label>
-		<textarea name='resumo' cols="45" rows="7" maxlength="700" style="resize: none;" />	
+		<textarea name='resumo' cols="30" rows="7" maxlength="700" style="resize: none;" />	
 		<br>
 	</div>
 
