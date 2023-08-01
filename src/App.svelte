@@ -148,7 +148,7 @@
 			<div class="scrollable-content">
 				<div>
 					<label for='titulo'> <p1> Título: </p1> </label>
-					<textarea name='titulo' cols="30" rows="4" maxlength="400" style="resize: none;" />	
+					<textarea name='titulo' cols="30" rows="4" maxlength="500" style="resize: none;" />	
 					<br>
 				</div>
 				<br>	
@@ -191,12 +191,12 @@
 							<th><img height=45 src="img/surpresa.svg"></th>				
 						</tr>
 						<tr style="height: 40px;">				
-							<td>{Math.round(alegria)}</td>
-							<td>{Math.round(tristeza)}</td>
-							<td>{Math.round(medo)}</td>
-							<td>{Math.round(nojo)}</td>
-							<td>{Math.round(raiva)}</td>
-							<td>{Math.round(surpresa)}</td>
+							<td>{Math.round(alegria * 100) / 100}</td>
+							<td>{Math.round(tristeza * 100) / 100}</td>
+							<td>{Math.round(medo * 100) / 100}</td>
+							<td>{Math.round(nojo * 100) / 100}</td>
+							<td>{Math.round(raiva * 100) / 100}</td>
+							<td>{Math.round(surpresa * 100) / 100}</td>
 						</tr>
 					</table>
 				</div>		
