@@ -11,6 +11,8 @@
 	let temas = "";
 	let tags = "";
 
+	let pillars_ai = "";
+
 	let ciencia_pesquisa = "";
 	let complexo_industrial = "";
 	let comunicacao = "";
@@ -83,6 +85,8 @@
 			temas = data["themes"]
 			tags = data["tags"]
 
+			pillars_ai = data["pillars_ai"]
+
 			ciencia_pesquisa = data["ciencia_pesquisa"]
 			complexo_industrial = data["complexo_industrial"]
 			comunicacao = data["comunicacao"]
@@ -139,119 +143,120 @@
 <Header/>
 
 <main style="padding-top: 80px;">
-	<div class="container">
-		<div class="scrollable-content">
-			<div>
-				<label for='titulo'> <p1> Título: </p1> </label>
-				<textarea name='titulo' cols="30" rows="4" maxlength="400" style="resize: none;" />	
+	<div style="padding: 25px;">
+		<div class="container">
+			<div class="scrollable-content">
+				<div>
+					<label for='titulo'> <p1> Título: </p1> </label>
+					<textarea name='titulo' cols="30" rows="4" maxlength="400" style="resize: none;" />	
+					<br>
+				</div>
+				<br>	
+				<div>
+					<label for='resumo'> <p1> Resumo: </p1> </label>
+					<textarea name='resumo' cols="30" rows="7" maxlength="700" style="resize: none;" />	
+					<br>
+				</div>
+
+				<br>	
 				<br>
+
+				<button class='button_style' on:click={button_action}> <img height=60 src="./img/next.png" style="padding-top: 20%"> </button>				
 			</div>
+		</div>
+		
+		<div>
+			{#if formPreenchido!=""}
+			{#if main_state==true}	
+			<br>
 			<br>	
-			<div>
-				<label for='resumo'> <p1> Resumo: </p1> </label>
-				<textarea name='resumo' cols="30" rows="7" maxlength="700" style="resize: none;" />	
-				<br>
+			
+			<div style="border:2px solid grey; border-radius: 15px; padding-right: 10px; padding-left: 10px;">
+				<h1><t1>Temas:</t1> {temas.toString().replaceAll(',', ', ')}</h1>
+				<h1><t1>Tags - FIS:</t1> {tags.toString().replaceAll(',', ', ')}</h1>				
+				<h1><t1>Pilares:</t1> {pillars_ai.toString().replaceAll(',', ', ')}</h1>
 			</div>
 
-			<br>	
 			<br>
 
-			<button class='button_style' on:click={button_action}> <img height=60 src="./img/next.png" style="padding-top: 20%"> </button>
-			
-		</div>
-	</div>
-	
-	<div>
-		{#if formPreenchido!=""}
-		{#if main_state==true}	
-		<br>
-		<br>	
-		
-		<div style="border:2px solid grey; border-radius: 15px; padding-right: 10px; padding-left: 10px;">
-			<h1><t1>Temas:</t1> {temas}</h1>
-			<h1><t1>Tags - FIS:</t1> {tags}</h1>
-		</div>
+			<div style="border:2px solid grey; border-radius: 15px; padding: 10px">
+				<div class="table-container">
+					<table style="font-size: 13px;">
+						<tr>				
+							<th><img height=45 src="img/alegria.svg"></th>
+							<th><img height=45 src="img/tristeza.svg"></th>
+							<th><img height=45 src="img/medo.svg"></th>
+							<th><img height=45 src="img/nojo.svg"></th>
+							<th><img height=45 src="img/raiva.svg"></th>
+							<th><img height=45 src="img/surpresa.svg"></th>				
+						</tr>
+						<tr style="height: 40px;">				
+							<td>{alegria}</td>
+							<td>{tristeza}</td>
+							<td>{medo}</td>
+							<td>{nojo}</td>
+							<td>{raiva}</td>
+							<td>{surpresa}</td>
+						</tr>
+					</table>
+				</div>		
 
-		<br>
-		<div style="padding: 1%"></div>	
-		<br>
-
-		<div style="border:2px solid grey; border-radius: 15px; padding: 10px">
-			<div class="table-container">
-				<table style="font-size: 13px;">
-					<tr>				
-						<th><img height=45 src="img/alegria.svg"></th>
-						<th><img height=45 src="img/tristeza.svg"></th>
-						<th><img height=45 src="img/medo.svg"></th>
-						<th><img height=45 src="img/nojo.svg"></th>
-						<th><img height=45 src="img/raiva.svg"></th>
-						<th><img height=45 src="img/surpresa.svg"></th>				
-					</tr>
-					<tr style="height: 40px;">				
-						<td>{alegria}</td>
-						<td>{tristeza}</td>
-						<td>{medo}</td>
-						<td>{nojo}</td>
-						<td>{raiva}</td>
-						<td>{surpresa}</td>
-					</tr>
-				</table>
-			</div>		
-
-			<div class="table-container">
-				<table style="font-size: 13px;">
-					<tr>
-						<!--<th></th>-->
-						<th>Ciência/Pesquisa</th>
-						<th>Complexo Industrial</th>
-						<th>Comunicação</th>
-						<th>Educação</th>
-						<th>Empreendedorismo</th>
-						<th>Financiamento</th>
-						<th>Gestão</th>
-						<th>Governança</th>
-						<th>Inovação</th>
-						<th>Modelos Assistenciais</th>
-						<th>Regulação</th>
-						<th>Socio-Ambiental</th>
-					</tr>
-					<!--<tr>
-						<th>Total:</th>
-						<td>{ciencia_pesquisa}</td>
-						<td>{complexo_industrial}</td>
-						<td>{comunicacao}</td>
-						<td>{educacao}</td>
-						<td>{empreendedorismo}</td>
-						<td>{financiamento}</td>
-						<td>{gestao}</td>
-						<td>{governanca}</td>
-						<td>{inovacao}</td>
-						<td>{modelos_assistenciais}</td>
-						<td>{regulacao}</td>
-						<td>{socio_ambiental}</td>
-					</tr>-->
-					<tr style="height: 40px;">
-						<!--<th>Proporcional:</th>-->
-						<td>{ciencia_pesquisa_percent}</td>
-						<td>{complexo_industrial_percent}</td>
-						<td>{comunicacao_percent}</td>
-						<td>{educacao_percent}</td>
-						<td>{empreendedorismo_percent}</td>
-						<td>{financiamento_percent}</td>
-						<td>{gestao_percent}</td>
-						<td>{governanca_percent}</td>
-						<td>{inovacao_percent}</td>
-						<td>{modelos_assistenciais_percent}</td>
-						<td>{regulacao_percent}</td>
-						<td>{socio_ambiental_percent}</td>
-					</tr>
-				</table>
+				<!--
+				<div class="table-container">
+					<table style="font-size: 13px;">
+						<tr>						
+							<th>Ciência/Pesquisa</th>
+							<th>Complexo Industrial</th>
+							<th>Comunicação</th>
+							<th>Educação</th>
+							<th>Empreendedorismo</th>
+							<th>Financiamento</th>
+							<th>Gestão</th>
+							<th>Governança</th>
+							<th>Inovação</th>
+							<th>Modelos Assistenciais</th>
+							<th>Regulação</th>
+							<th>Socio-Ambiental</th>
+						</tr>
+						<!--<tr>
+							<th>Total:</th>
+							<td>{ciencia_pesquisa}</td>
+							<td>{complexo_industrial}</td>
+							<td>{comunicacao}</td>
+							<td>{educacao}</td>
+							<td>{empreendedorismo}</td>
+							<td>{financiamento}</td>
+							<td>{gestao}</td>
+							<td>{governanca}</td>
+							<td>{inovacao}</td>
+							<td>{modelos_assistenciais}</td>
+							<td>{regulacao}</td>
+							<td>{socio_ambiental}</td>
+						</tr>--><!--
+						<tr style="height: 40px;">						
+							<td>{ciencia_pesquisa_percent}</td>
+							<td>{complexo_industrial_percent}</td>
+							<td>{comunicacao_percent}</td>
+							<td>{educacao_percent}</td>
+							<td>{empreendedorismo_percent}</td>
+							<td>{financiamento_percent}</td>
+							<td>{gestao_percent}</td>
+							<td>{governanca_percent}</td>
+							<td>{inovacao_percent}</td>
+							<td>{modelos_assistenciais_percent}</td>
+							<td>{regulacao_percent}</td>
+							<td>{socio_ambiental_percent}</td>
+						</tr>
+					</table>
+				</div>
+				-->
 			</div>
-		</div>
-		{/if}	
-		{/if}		
+			{/if}	
+			{/if}		
 
+		</div>
 	</div>
+
 	<div style="padding-bottom: 20%;"></div>
 
 </main>
