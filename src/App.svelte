@@ -120,15 +120,7 @@
 			tristeza = data["tristeza"] + '%'
 			surpresa = data["surpresa"] + '%'
 
-			main_state = true			
-
-			console.log({Math.round(alegria * 100) / 100});
-			console.log({Math.round(tristeza * 100) / 100});
-			console.log({Math.round(medo * 100) / 100});
-			console.log({Math.round(nojo * 100) / 100});
-			console.log({Math.round(raiva * 100) / 100});
-			console.log({Math.round(surpresa * 100) / 100});
-
+			main_state = true
         })
         .catch((error) => {
             console.log('ERRO!')
@@ -199,12 +191,12 @@
 							<th><img height=45 src="img/surpresa.svg"></th>				
 						</tr>
 						<tr style="height: 40px;">				
-							<td>{Math.round(alegria * 100) / 100}</td>
-							<td>{Math.round(tristeza * 100) / 100}</td>
-							<td>{Math.round(medo * 100) / 100}</td>
-							<td>{Math.round(nojo * 100) / 100}</td>
-							<td>{Math.round(raiva * 100) / 100}</td>
-							<td>{Math.round(surpresa * 100) / 100}</td>
+							<td>{alegria}</td>
+							<td>{tristeza}</td>
+							<td>{medo}</td>
+							<td>{nojo}</td>
+							<td>{raiva}</td>
+							<td>{surpresa}</td>
 						</tr>
 					</table>
 				</div>		
