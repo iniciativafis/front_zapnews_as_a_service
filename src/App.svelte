@@ -191,12 +191,12 @@
 							<th><img height=45 src="img/surpresa.svg"></th>				
 						</tr>
 						<tr style="height: 40px;">				
-							<td>{alegria}</td>
-							<td>{tristeza}</td>
-							<td>{medo}</td>
-							<td>{nojo}</td>
-							<td>{raiva}</td>
-							<td>{surpresa}</td>
+							<td>{Math.round(alegria , 2)}</td>
+							<td>{Math.round(tristeza , 2)}</td>
+							<td>{Math.round(medo , 2)}</td>
+							<td>{Math.round(nojo , 2)}</td>
+							<td>{Math.round(raiva , 2)}</td>
+							<td>{Math.round(surpresa , 2)}</td>
 						</tr>
 					</table>
 				</div>		
