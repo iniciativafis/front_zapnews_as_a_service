@@ -120,7 +120,15 @@
 			tristeza = data["tristeza"] + '%'
 			surpresa = data["surpresa"] + '%'
 
-			main_state = true
+			main_state = true			
+
+			console.log({Math.round(alegria * 100) / 100});
+			console.log({Math.round(tristeza * 100) / 100});
+			console.log({Math.round(medo * 100) / 100});
+			console.log({Math.round(nojo * 100) / 100});
+			console.log({Math.round(raiva * 100) / 100});
+			console.log({Math.round(surpresa * 100) / 100});
+
         })
         .catch((error) => {
             console.log('ERRO!')
