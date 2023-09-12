@@ -53,7 +53,10 @@
         const titulo = document.querySelector('textarea[name="titulo"]');
         const resumo = document.querySelector('textarea[name="resumo"]');
 		
-        return titulo.value && resumo.value;
+        const palavrasTitulo = titulo.value.split(/\s+/).filter(Boolean);
+    	const palavrasResumo = resumo.value.split(/\s+/).filter(Boolean);
+    
+    	return palavrasTitulo.length >= 5 && palavrasResumo.length >= 5;
     }
 
 	function salvarFormulario() {        
@@ -131,10 +134,15 @@
 	function button_action() {		
 		main_state = false
 		formPreenchido = isFormPreenchido()
-		console.log('formPreenchido')
-		console.log(formPreenchido)
-        salvarFormulario()
-        back_work();		
+
+		if (formPreenchido) {			
+			console.log('formPreenchido')
+			console.log(formPreenchido)
+        	salvarFormulario()
+        	back_work();
+		} else {
+			alert('Ambas as caixas de texto devem conter pelo menos cinco palavras.');
+		}
     }
 
 </script>
